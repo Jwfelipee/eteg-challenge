@@ -1,10 +1,10 @@
-FROM node:lts
+FROM node:16.9.0-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY package*.json ./
+COPY package.json ./
 
-RUN npm ci
+RUN npm install
 
 COPY . .
 

@@ -15,14 +15,18 @@
 - Listar clientes
 
 ### Como rodar o projeto
+Clone o repositório
+```bash
+git clone https://github.com/Jwfelipee/eteg-challenge.git
 ```
-# Clone o repositório
-git clone <url bash>
 
-# Entre no diretório
+Entre no diretório
+```bash
 cd eteg-challenge
+```
 
-# Rode o docker
+Rode o docker
+```bash
 docker compose up
 ```
 
