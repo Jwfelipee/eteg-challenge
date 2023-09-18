@@ -1,4 +1,4 @@
-FROM node:16.9.0-alpine
+FROM jwfelipe/web-eteg-challenge:1.0
 
 WORKDIR /app
 

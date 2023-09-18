@@ -1,6 +1,7 @@
 import { ArrowDown } from "react-feather";
 import { mask } from "remask";
 import { Customer } from "../type";
+import { Fragment } from "react";
 
 interface TableHomeProps {
   list: Customer[];
@@ -9,9 +10,22 @@ interface TableHomeProps {
     id: string;
     observation: string;
   };
+  loading: boolean;
 }
 
-export function TableHome({ list, clicked, selectRow }: TableHomeProps) {
+export function TableHome({
+  list,
+  clicked,
+  selectRow,
+  loading,
+}: TableHomeProps) {
+  if (loading) {
+    return (
+      <div className="table">
+        <p>Carregando...</p>
+      </div>
+    );
+  }
   return (
     <div className="table">
       <table>
@@ -25,11 +39,8 @@ export function TableHome({ list, clicked, selectRow }: TableHomeProps) {
         </thead>
         <tbody>
           {list.map((item) => (
-            <>
-              <tr
-                key={item.id}
-                onClick={() => selectRow(item.id, item.observation)}
-              >
+            <Fragment key={item.id}>
+              <tr onClick={() => selectRow(item.id, item.observation)}>
                 <td>{item.name}</td>
                 <td>{item.email}</td>
                 <td>{mask(item.cpf, ["999.999.999-99"])}</td>
@@ -58,7 +69,7 @@ export function TableHome({ list, clicked, selectRow }: TableHomeProps) {
                   </td>
                 </tr>
               )}
-            </>
+            </Fragment>
           ))}
         </tbody>
       </table>

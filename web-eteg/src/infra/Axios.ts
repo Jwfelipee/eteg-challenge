@@ -11,8 +11,8 @@ export const http = {
       return { data, status };
     } catch (error: any) {
       return {
-        data: error.response.data,
-        status: error.response.status,
+        data: error?.response?.data,
+        status: error?.response?.status,
       };
     }
   },
@@ -22,8 +22,8 @@ export const http = {
       return { data, status };
     } catch (error: any) {
       return {
-        data: error.response.data,
-        status: error.response.status,
+        data: error?.response?.data,
+        status: error?.response?.status,
       };
     }
   },
@@ -33,8 +33,8 @@ export const http = {
       return { data, status };
     } catch (error: any) {
       return {
-        data: error.response.data,
-        status: error.response.status,
+        data: error?.response?.data,
+        status: error?.response?.status,
       };
     }
   },
@@ -44,8 +44,8 @@ export const http = {
       return { data, status };
     } catch (error: any) {
       return {
-        data: error.response.data,
-        status: error.response.status,
+        data: error?.response?.data,
+        status: error?.response?.status,
       };
     }
   },
