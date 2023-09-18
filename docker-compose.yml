@@ -1,0 +1,46 @@
+services:
+  frontend:
+    build:
+      context: ./web-eteg
+      dockerfile: ./Dockerfile
+    ports:
+      - "5000:3000"
+    networks:
+      - mynetwork
+    volumes:
+      - ./web-eteg:/usr/src/app
+    environment:
+      - API_URL=http://api-nest:5001
+    depends_on:
+      - api-nest
+  api-nest:
+    build:
+      context: ./api-nest-eteg
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "5001:3334"
+    networks:
+      - mynetwork
+    volumes:
+      - ./api-nest-eteg:/usr/src/app
+    environment:
+      - DB_HOST=database
+    expose:
+      - "3334"
+    depends_on:
+      - database
+  database:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_DATABASE}
+      - DB_URL=${DB_URL}
+      - DB_HOST=${DB_HOST}
+    ports:
+      - "${DB_PORT}:5432"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
