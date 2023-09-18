@@ -30,6 +30,11 @@ Rode o docker
 docker compose up
 ```
 
+Abra em seu navegador
+```bash
+http://localhost:3000
+```
+
 ## Author 👨‍🦰
 Feito por:
 - [João Wictor Felipe](https://github.com/Jwfelipee/)
