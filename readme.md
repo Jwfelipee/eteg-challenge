@@ -35,6 +35,11 @@ Abra em seu navegador
 http://localhost:3000
 ```
 
+A API estará rodando em
+```bash
+http://localhost:5001
+```
+
 ## Author 👨‍🦰
 Feito por:
 - [João Wictor Felipe](https://github.com/Jwfelipee/)
