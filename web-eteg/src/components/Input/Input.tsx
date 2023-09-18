@@ -58,11 +58,14 @@ export function BoxInput<T extends BoxInputProps>({
   const sizesWidthConveted = (sizeWidth: string) => {
     if (sizeWidth === "100") return 100;
     const size = Number(sizeWidth);
-    return size - 0.4;
+    return size - 0.5;
   };
 
   return (
-    <div style={{ width: `${sizesWidthConveted(sizeWidth)}%` }}>
+    <div
+      style={{ width: `${sizesWidthConveted(sizeWidth)}%` }}
+      className="box-input"
+    >
       <Input className={className} sizes={sizes} {...rest} />
     </div>
   );

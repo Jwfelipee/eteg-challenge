@@ -4,7 +4,7 @@ services:
       context: ./web-eteg
       dockerfile: ./Dockerfile
     ports:
-      - "5000:3000"
+      - "3000:3000"
     networks:
       - mynetwork
     volumes:

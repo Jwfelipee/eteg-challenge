@@ -6,6 +6,7 @@ import { validateCPF } from "../../helpers";
 import { useNavigate } from "react-router-dom";
 import { http } from "../../infra";
 import { toast } from "react-toastify";
+import { IFormPage } from "./type";
 
 export function FormPage() {
   const [form, setForm] = useState<IFormPage>({
@@ -124,12 +125,4 @@ export function FormPage() {
       </form>
     </div>
   );
-}
-
-export interface IFormPage {
-  name: string;
-  email: string;
-  cpf: string;
-  color: string;
-  observation: string;
 }

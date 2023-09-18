@@ -45,3 +45,9 @@ a {
   gap: 20px;
   overflow: auto;
 }
+
+@media (max-width: 1130px) {
+  .container {
+    max-height: 80vh;
+  }
+}

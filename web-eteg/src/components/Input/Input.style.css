@@ -35,3 +35,9 @@ label {
 .error-message {
   font-size: 12px;
 }
+
+@media (max-width: 1130px) {
+  .box-input {
+    width: 100% !important;
+  }
+}
