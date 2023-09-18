@@ -1,5 +1,3 @@
-import { join } from "path";
-
 require('dotenv').config();
 import * as database from '../model';
 const entities = (Object.keys(database) as Array<keyof typeof database>).map(

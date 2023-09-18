@@ -1,5 +1,3 @@
-// create a repository for customer entity
-
 import { Injectable } from '@nestjs/common';
 import { CustomerEntity } from 'src/model';
 import { DataSource, Repository } from 'typeorm';
